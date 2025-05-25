@@ -18,12 +18,12 @@ interface FeatureProps {
 
 const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-orange-500 transition-colors group">
-      <div className="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all">
+    <div className="bg-accent p-6 rounded-lg border border-transparent hover:border-primary transition-colors group">
+      <div className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 };
@@ -81,14 +81,14 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-gray-900">
+    <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Powerful Features,{" "}
-            <span className="text-orange-500">Simple Interface</span>
+            <span className="text-primary">Simple Interface</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Manage your IT assets with ease using our comprehensive set of
             features designed for modern businesses.
           </p>

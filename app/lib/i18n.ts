@@ -1,4 +1,4 @@
-import { createInstance, i18n } from "i18next";
+import { createInstance, i18n, Resource } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import i18NextConfig from "@/i18next.config";
 
@@ -6,7 +6,7 @@ export default async function initTranslations(
   lang: string,
   ns: string[],
   i18nInstance?: i18n,
-  resources?: any
+  resources?: Resource
 ) {
   i18nInstance = i18nInstance || createInstance();
 

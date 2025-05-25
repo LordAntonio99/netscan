@@ -9,6 +9,7 @@ import {
   MonitorIcon,
   XIcon,
 } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-sm py-3 shadow-lg"
+          ? "bg-background/80 backdrop-blur-sm py-3 shadow-lg"
           : "bg-transparent py-5"
       )}
     >
@@ -44,35 +45,15 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#features"
-              className="text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#how-it-works"
-              className="text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              How It Works
-            </a>
-            <a
-              href="#pricing"
-              className="text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Pricing
-            </a>
-            <a
-              href="#testimonials"
-              className="text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Testimonials
-            </a>
+            <Link href="#features">Features</Link>
+            <Link href="#how-it-works">How It Works</Link>
+            <Link href="#pricing">Pricing</Link>
+            <Link href="#testimonials">Testimonials</Link>
             <Button variant="ghost" size="sm" className="mr-2">
               <LogInIcon className="h-4 w-4 mr-2" />
               Sign In
             </Button>
-            <Button variant="secondary" size="sm">
+            <Button variant="outline" size="sm">
               Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
           </nav>
