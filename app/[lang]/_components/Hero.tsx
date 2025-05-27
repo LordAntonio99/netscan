@@ -1,10 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { SearchCheckIcon, ServerIcon, ShieldIcon, ZapIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations("Hero");
 
   useEffect(() => {
     setIsVisible(true);
@@ -22,40 +24,40 @@ const Hero = () => {
           >
             <div className="badge mb-4 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
               <ZapIcon className="mr-1 h-3.5 w-3.5" />
-              No installation required
+              {t("installation")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Effortless <span className="text-primary">IT Asset</span>{" "}
-              Management
+              {t("title1")} <span className="text-primary">{t("title2")}</span>
+              <br />
+              {t("title3")}
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-xl">
-              Automatically discover and monitor all assets on your network
-              without installing software on endpoint devices.
+              {t("subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="default" size="lg">
-                Start Free Trial
+                {t("trial")}
               </Button>
               <Button variant="outline" size="lg">
-                See How It Works
+                {t("demo")}
               </Button>
             </div>
             <div className="mt-12 grid grid-cols-2 gap-6">
               <div className="flex items-start">
                 <SearchCheckIcon className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <p className="text-gray-300">Instant network discovery</p>
+                <p className="text-gray-300">{t("badge1")}</p>
               </div>
               <div className="flex items-start">
                 <ShieldIcon className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <p className="text-gray-300">Enterprise-grade security</p>
+                <p className="text-gray-300">{t("badge2")}</p>
               </div>
               <div className="flex items-start">
                 <ServerIcon className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <p className="text-gray-300">Cloud-based platform</p>
+                <p className="text-gray-300">{t("badge3")}</p>
               </div>
               <div className="flex items-start">
                 <ZapIcon className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <p className="text-gray-300">Setup in minutes</p>
+                <p className="text-gray-300">{t("badge4")}</p>
               </div>
             </div>
           </div>

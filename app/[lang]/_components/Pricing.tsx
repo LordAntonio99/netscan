@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckIcon, HelpCircleIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 
 interface PlanFeature {
@@ -18,66 +19,59 @@ interface PricingPlan {
 
 const Pricing = () => {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
+  const t = useTranslations("Pricing");
 
   const plans: PricingPlan[] = [
     {
-      name: "Starter",
+      name: t("Plans.Starter.name"),
       price: billing === "monthly" ? "$2" : "$1.50",
-      description:
-        "Perfect for small businesses just getting started with asset management.",
+      description: t("Plans.Starter.description"),
       features: [
-        { feature: "Up to 100 assets" },
-        { feature: "Basic asset discovery" },
-        { feature: "Real-time monitoring" },
-        { feature: "Email alerts" },
-        { feature: "Cloud access" },
-        { feature: "8 hours support (business days)" },
+        { feature: t("Plans.Starter.feature1") },
+        { feature: t("Plans.Starter.feature2") },
+        { feature: t("Plans.Starter.feature3") },
+        { feature: t("Plans.Starter.feature4") },
+        { feature: t("Plans.Starter.feature5") },
+        { feature: t("Plans.Starter.feature6") },
       ],
-      cta: "Start Free Trial",
+      cta: t("Plans.Starter.cta"),
     },
     {
-      name: "Business",
+      name: t("Plans.Business.name"),
       price: billing === "monthly" ? "$1.50" : "$1.20",
-      description:
-        "Ideal for growing businesses with expanding IT infrastructure.",
+      description: t("Plans.Business.description"),
       features: [
-        { feature: "101-500 assets" },
-        { feature: "Advanced asset discovery" },
-        { feature: "Real-time monitoring" },
-        { feature: "Email and SMS alerts" },
-        { feature: "Cloud access with API" },
+        { feature: t("Plans.Business.feature1") },
+        { feature: t("Plans.Business.feature2") },
+        { feature: t("Plans.Business.feature3") },
+        { feature: t("Plans.Business.feature4") },
+        { feature: t("Plans.Business.feature5") },
         {
-          feature: "24/7 priority support",
-          tooltip: "Support available 24/7 including weekends and holidays",
+          feature: t("Plans.Business.feature6"),
+          tooltip: t("Plans.Business.feature6Tooltip"),
         },
         {
-          feature: "Custom reports",
-          tooltip:
-            "Create and schedule custom reports based on your requirements",
+          feature: t("Plans.Business.feature7"),
+          tooltip: t("Plans.Business.feature7Tooltip"),
         },
       ],
-      cta: "Start Free Trial",
+      cta: t("Plans.Business.cta"),
       highlighted: true,
     },
     {
-      name: "Enterprise",
+      name: t("Plans.Enterprise.name"),
       price: billing === "monthly" ? "$1" : "$0.80",
-      description: "For large organizations with complex IT environments.",
+      description: t("Plans.Enterprise.description"),
       features: [
-        { feature: "500+ assets" },
-        { feature: "Enterprise-grade discovery" },
-        { feature: "Real-time monitoring" },
-        { feature: "Advanced alerting system" },
-        { feature: "Full API access" },
-        { feature: "24/7 dedicated support" },
-        { feature: "Custom integration" },
-        {
-          feature: "On-premise option",
-          tooltip:
-            "Option to deploy on your own infrastructure for added security",
-        },
+        { feature: t("Plans.Enterprise.feature1") },
+        { feature: t("Plans.Enterprise.feature2") },
+        { feature: t("Plans.Enterprise.feature3") },
+        { feature: t("Plans.Enterprise.feature4") },
+        { feature: t("Plans.Enterprise.feature5") },
+        { feature: t("Plans.Enterprise.feature6") },
+        { feature: t("Plans.Enterprise.feature7") },
       ],
-      cta: "Contact Sales",
+      cta: t("Plans.Enterprise.cta"),
     },
   ];
   return (
@@ -85,26 +79,27 @@ const Pricing = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Transparent <span className="text-orange-500">Pricing</span>
+            {t("title1")} <span className="text-orange-500">{t("title2")}</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Pay only for the assets we detect. No hidden fees, no complicated
-            pricing structures.
+            {t("subtitle")}
           </p>
-          <div className="inline-flex items-center bg-gray-800 p-1 rounded-lg mb-8">
+          <div className="inline-flex items-center p-1 rounded-lg mb-8">
             <Button
               onClick={() => setBilling("monthly")}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all`}
+              className={
+                "px-4 py-2 rounded-r-none text-sm font-medium transition-all"
+              }
               variant={billing === "monthly" ? "default" : "outline"}
             >
-              Monthly
+              {t("Type.monthly")}
             </Button>
             <Button
               onClick={() => setBilling("annual")}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all`}
+              className={`px-4 py-2 rounded-l-none text-sm font-medium transition-all`}
               variant={billing === "annual" ? "default" : "outline"}
             >
-              Annual (20% off)
+              {t("Type.annual")}
             </Button>
           </div>
         </div>
@@ -112,15 +107,15 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-gray-800 rounded-xl overflow-hidden transition-all ${
+              className={`bg-secondary rounded-xl overflow-hidden transition-all ${
                 plan.highlighted
-                  ? "border-2 border-orange-500 scale-105 shadow-xl shadow-orange-500/10 relative"
-                  : "border border-gray-700"
+                  ? "border-2 border-primary scale-105 shadow-xl shadow-primary/10 relative"
+                  : "border border-muted-foreground"
               }`}
             >
               {plan.highlighted && (
-                <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                  POPULAR
+                <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">
+                  {t("popular")}
                 </div>
               )}
               <div className="p-8">
@@ -131,23 +126,27 @@ const Pricing = () => {
                   <span className="text-4xl font-bold text-white">
                     {plan.price}
                   </span>
-                  <span className="text-gray-400 ml-2">per asset/month</span>
+                  <span className="text-muted-foreground ml-2">
+                    {t("count")}
+                  </span>
                 </div>
-                <p className="text-gray-300 mb-6">{plan.description}</p>
+                <p className="text-muted-foreground mb-6">{plan.description}</p>
                 <Button
-                  variant={plan.highlighted ? "default" : "secondary"}
+                  variant={plan.highlighted ? "default" : "outline"}
                   className="w-full"
                 >
                   {plan.cta}
                 </Button>
               </div>
-              <div className="bg-gray-850 p-8 border-t border-gray-700">
-                <p className="font-medium text-white mb-4">Features include:</p>
+              <div className="bg-secondary p-8 border-t border-muted-foreground">
+                <p className="font-medium text-white mb-4">
+                  {t("sectionTitle")}
+                </p>
                 <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <CheckIcon className="h-5 w-5 text-orange-500 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-gray-300">{feature.feature}</span>
+                      <CheckIcon className="h-5 w-5 text-primary mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-white">{feature.feature}</span>
                       {feature.tooltip && (
                         <div className="group relative ml-1">
                           <HelpCircleIcon className="h-4 w-4 text-gray-500 cursor-help" />
@@ -163,15 +162,12 @@ const Pricing = () => {
             </div>
           ))}
         </div>
-        <div className="mt-16 max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg border border-gray-700 text-center">
+        <div className="mt-16 max-w-2xl mx-auto bg-secondary p-8 rounded-lg border border-muted-foreground text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Need a custom solution?
+            {t("customTitle")}
           </h3>
-          <p className="text-gray-300 mb-6">
-            We offer custom pricing and features for organizations with specific
-            requirements. Contact our sales team to discuss your needs.
-          </p>
-          <Button variant="outline">Contact Sales</Button>
+          <p className="text-gray-300 mb-6">{t("customDescription")}</p>
+          <Button variant="outline">{t("sales")}</Button>
         </div>
       </div>
     </section>

@@ -10,12 +10,15 @@ import {
   MailIcon,
   MonitorIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const t = useTranslations("LogIn");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,16 +33,14 @@ const LoginPage = () => {
         >
           <MonitorIcon className="h-10 w-10" />
         </Link>
-        <h2 className="mt-6 text-center text-3xl font-bold">
-          Sign in to your account
-        </h2>
+        <h2 className="mt-6 text-center text-3xl font-bold">{t("title")}</h2>
         <p className="mt-2 text-center text-sm text-muted-foreground">
-          Or{" "}
+          {t("subtitle")}{" "}
           <Link
             href="/register"
             className="font-medium text-primary hover:text-primary/80"
           >
-            create a new account
+            {t("create")}
           </Link>
         </p>
       </div>
@@ -49,7 +50,7 @@ const LoginPage = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <Label htmlFor="email" className="text-sm font-medium">
-                Email address
+                {t("email")}
               </Label>
               <div className="mt-1 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -64,14 +65,14 @@ const LoginPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full pl-10 pr-3 py-2 border border-muted-foreground rounded-md placeholder-muted-foreground/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                  placeholder="Enter your email"
+                  placeholder={t("email-placeholder")}
                 />
               </div>
             </div>
 
             <div>
               <Label htmlFor="password" className="text-sm font-medium">
-                Password
+                {t("password")}
               </Label>
               <div className="mt-1 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -86,7 +87,7 @@ const LoginPage = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="block w-full pl-10 pr-3 py-2 border border-muted-foreground rounded-md placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                  placeholder="Enter your password"
+                  placeholder={t("password-placeholder")}
                 />
               </div>
             </div>
@@ -95,7 +96,7 @@ const LoginPage = () => {
               <div className="flex items-center">
                 <Checkbox id="remember-me" name="remember-me" />
                 <Label htmlFor="remember-me" className="ml-2 block text-sm ">
-                  Remember me
+                  {t("remember-me")}
                 </Label>
               </div>
 
@@ -104,14 +105,14 @@ const LoginPage = () => {
                   href="/forgot-password"
                   className="font-medium text-primary hover:text-primary/80"
                 >
-                  Forgot your password?
+                  {t("forgot-password")}
                 </Link>
               </div>
             </div>
 
             <div>
               <Button type="submit" variant="default" className="w-full">
-                Sign in <ArrowRightIcon className="ml-2 h-4 w-4" />
+                {t("sign-in")} <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </form>
@@ -123,7 +124,7 @@ const LoginPage = () => {
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-2 text-muted-foreground bg-secondary">
-                  Or continue with
+                  {t("continue-with")}
                 </span>
               </div>
             </div>

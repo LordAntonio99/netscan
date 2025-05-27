@@ -1,0 +1,141 @@
+{
+  "Header": {
+    "features": "Features",
+    "how-it-works": "How It Works",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "sign-in": "Sign In",
+    "get-started": "Get Started"
+  },
+  "Hero": {
+    "installation": "No installation required",
+    "title1": "Effortless",
+    "title2": "IT Asset",
+    "title3": "Management",
+    "subtitle": "Automatically discover and monitor all assets on your network without installing software on endpoint devices.",
+    "trial": "Start Free Trial",
+    "demo": "See How It Works",
+    "badge1": "Instant network discovery",
+    "badge2": "Enterprise-grade security",
+    "badge3": "Cloud-based platform",
+    "badge4": "Setup in minutes"
+  },
+  "Features": {
+    "title1": "Powerful Features,",
+    "title2": "Simple Interface",
+    "subtitle": "Manage your IT assets with ease using our comprehensive set of features designed for modern businesses.",
+    "zero-installation": "Zero Installation",
+    "zero-installation-desc": "No need to install software on every device. Scan and monitor your entire network without touching endpoints.",
+    "automatic-discovery": "Automatic Discovery",
+    "automatic-discovery-desc": "Detect all devices connected to your network automatically, including servers, workstations, and IoT devices.",
+    "monitor": "Real-time Monitoring",
+    "monitor-desc": "Get instant alerts when new devices connect to your network or when existing assets change status.",
+    "dashboard": "Comprehensive Dashboard",
+    "dashboard-desc": "Visualize your entire IT infrastructure with intuitive dashboards and detailed asset information.",
+    "security": "Enterprise Security",
+    "security-desc": "Ensure compliance with industry standards like GDPR, HIPAA, and ISO 27001 for secure asset management.",
+    "cloud": "Cloud Access",
+    "cloud-desc": "Access your asset management system from anywhere using our secure cloud-based platform.",
+    "scalable": "Scalable Solution",
+    "scalable-desc": "Perfect for businesses of all sizes, from small startups to large enterprises with thousands of devices.",
+    "team": "Team Collaboration",
+    "team-desc": "Share asset information with your team and assign responsibilities for efficient management."
+  },
+  "LogIn": {
+    "title": "Sign in to your account",
+    "subtitle": "Or",
+    "create": "create a new account",
+    "email": "Email address",
+    "email-placeholder": "Enter your email",
+    "password": "Password",
+    "password-placeholder": "Enter your password",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot your password?",
+    "sign-in": "Sign in",
+    "continue-with": "Or continue with"
+  },
+  "HowItWorks": {
+    "title1": "Connect to Your Network",
+    "description1": "Our system connects to your network using a small secure appliance or through your existing infrastructure. No complex setup required.",
+    "title2": "Automatic Discovery",
+    "description2": "NetScan automatically discovers all devices connected to your network, identifying their type, specifications, and installed software.",
+    "title3": "Real-time Monitoring",
+    "description3": "Monitor the status of all your IT assets in real-time. Get alerts for new devices, status changes, or potential security issues.",
+    "title4": "Immediate Results",
+    "description4": "Start gaining insights into your IT infrastructure within minutes of setup. Generate reports, track changes, and optimize your assets.",
+    "titleStart": "How",
+    "titleEnd": "Works",
+    "subtitle": "Get started in minutes with our simple four-step process",
+    "action": "See it in action",
+    "video": "Video demonstration",
+    "videoDescription": "Watch how NetScan discovers and monitors your entire IT infrastructure in minutes without installing any software on individual devices."
+  },
+  "Pricing": {
+    "title1": "Transparent",
+    "title2": "Pricing",
+    "subtitle": "Pay only for the assets we detect. No hidden fees, no complicated pricing structures.",
+    "popular": "Popular",
+    "count": "per asset/month",
+    "sectionTitle": "Features included:",
+    "customTitle": "Need a custom solution?",
+    "customDescription": "We offer custom pricing and features for organizations with specific requirements. Contact our sales team to discuss your needs.",
+    "sales": "Contact Sales",
+    "Type": {
+      "monthly": "Monthly",
+      "annual": "Annual (-20%)"
+    },
+    "Plans": {
+      "Starter": {
+        "name": "Starter",
+        "description": "Perfect for small businesses just getting started with asset management.",
+        "feature1": "Up to 100 assets",
+        "feature2": "Basic asset discovery",
+        "feature3": "Real-time monitoring",
+        "feature4": "Email alerts",
+        "feature5": "Cloud access",
+        "feature6": "8 hours support (business days)",
+        "cta": "Start Free Trial"
+      },
+      "Business": {
+        "name": "Business",
+        "description": "Ideal for growing businesses with expanding IT infrastructure.",
+        "feature1": "101-500 assets",
+        "feature2": "Advanced asset discovery",
+        "feature3": "Real-time monitoring",
+        "feature4": "Email and SMS alerts",
+        "feature5": "Cloud access with API",
+        "feature6": "24/7 priority support",
+        "feature6Tooltip": "Support available 24/7 including weekends and holidays",
+        "feature7": "Custom reports",
+        "feature7Tooltip": "Create and schedule custom reports based on your requirements",
+        "cta": "Start Free Trial"
+      },
+      "Enterprise": {
+        "name": "Enterprise",
+        "description": "For large organizations with complex IT environments.",
+        "feature1": "500+ assets",
+        "feature2": "Enterprise-grade discovery",
+        "feature3": "Real-time monitoring",
+        "feature4": "Advanced alerting system",
+        "feature5": "Full API access",
+        "feature6": "24/7 dedicated support",
+        "feature7": "Custom integration",
+        "cta": "Contact Sales"
+      }
+    }
+  },
+  "Testimonials": {
+    "titleStart": "Trusted by",
+    "titleEnd": "Industry Leaders",
+    "subtitle": "Join hundreds of businesses that use NetScan to manage their IT assets effortlessly",
+    "1": {
+      "quote": "NetScan transformed our IT asset management process. We used to spend days manually auditing devices, but now it's all automated and in real-time."
+    },
+    "2": {
+      "quote": "The zero-installation approach is a game-changer. We deployed NetScan across our entire network without touching a single endpoint device."
+    },
+    "3": {
+      "quote": "As a financial institution, security is our top priority. NetScan gives us complete visibility without compromising our strict security protocols."
+    }
+  }
+}

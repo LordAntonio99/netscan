@@ -1,4 +1,5 @@
 import { BarChartIcon, SearchIcon, WifiIcon, ZapIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 interface StepProps {
@@ -39,33 +40,30 @@ const Step: React.FC<StepProps> = ({
 };
 
 const HowItWorks = () => {
+  const t = useTranslations("HowItWorks");
   const steps = [
     {
       number: 1,
-      title: "Connect to Your Network",
-      description:
-        "Our system connects to your network using a small secure appliance or through your existing infrastructure. No complex setup required.",
+      title: t("title1"),
+      description: t("description1"),
       icon: <WifiIcon className="h-6 w-6" />,
     },
     {
       number: 2,
-      title: "Automatic Discovery",
-      description:
-        "NetScan automatically discovers all devices connected to your network, identifying their type, specifications, and installed software.",
+      title: t("title2"),
+      description: t("description2"),
       icon: <SearchIcon className="h-6 w-6" />,
     },
     {
       number: 3,
-      title: "Real-time Monitoring",
-      description:
-        "Monitor the status of all your IT assets in real-time. Get alerts for new devices, status changes, or potential security issues.",
+      title: t("title3"),
+      description: t("description3"),
       icon: <BarChartIcon className="h-6 w-6" />,
     },
     {
       number: 4,
-      title: "Immediate Results",
-      description:
-        "Start gaining insights into your IT infrastructure within minutes of setup. Generate reports, track changes, and optimize your assets.",
+      title: t("title4"),
+      description: t("description4"),
       icon: <ZapIcon className="h-6 w-6" />,
     },
   ];
@@ -75,10 +73,11 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            How <span className="text-primary">NetScan</span> Works
+            {t("titleStart")} <span className="text-primary">NetScan</span>{" "}
+            {t("titleEnd")}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get started in minutes with our simple four-step process
+            {t("subtitle")}
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
@@ -95,7 +94,7 @@ const HowItWorks = () => {
         </div>
         <div className="mt-16 max-w-2xl mx-auto bg-background p-8 rounded-lg border border-muted-foreground/20">
           <h3 className="text-2xl font-bold text-white mb-4 text-center">
-            See it in action
+            {t("action")}
           </h3>
           <div className="aspect-video bg-accent rounded-lg mb-6 flex items-center justify-center">
             <div className="text-muted-foreground flex flex-col items-center">
@@ -119,13 +118,11 @@ const HowItWorks = () => {
                   d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <p>Video demonstration</p>
+              <p>{t("video")}</p>
             </div>
           </div>
           <p className="text-muted-foreground text-center">
-            Watch how NetScan discovers and monitors your entire IT
-            infrastructure in minutes without installing any software on
-            individual devices.
+            {t("videoDescription")}
           </p>
         </div>
       </div>

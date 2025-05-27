@@ -8,6 +8,7 @@ import {
   UsersIcon,
   ZapIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 interface FeatureProps {
@@ -29,53 +30,47 @@ const Feature: React.FC<FeatureProps> = ({ title, description, icon }) => {
 };
 
 const Features: React.FC = () => {
+  const t = useTranslations("Features");
+
   const features = [
     {
-      title: "Zero Installation",
-      description:
-        "No need to install software on every device. Scan and monitor your entire network without touching endpoints.",
+      title: t("zero-installation"),
+      description: t("zero-installation-desc"),
       icon: <ZapIcon className="h-6 w-6" />,
     },
     {
-      title: "Automatic Discovery",
-      description:
-        "Detect all devices connected to your network automatically, including servers, workstations, and IoT devices.",
+      title: t("automatic-discovery"),
+      description: t("automatic-discovery-desc"),
       icon: <MonitorIcon className="h-6 w-6" />,
     },
     {
-      title: "Real-time Monitoring",
-      description:
-        "Get instant alerts when new devices connect to your network or when existing assets change status.",
+      title: t("monitor"),
+      description: t("monitor-desc"),
       icon: <ClockIcon className="h-6 w-6" />,
     },
     {
-      title: "Comprehensive Dashboard",
-      description:
-        "Visualize your entire IT infrastructure with intuitive dashboards and detailed asset information.",
+      title: t("dashboard"),
+      description: t("dashboard-desc"),
       icon: <BarChartIcon className="h-6 w-6" />,
     },
     {
-      title: "Enterprise Security",
-      description:
-        "Ensure compliance with industry standards like GDPR, HIPAA, and ISO 27001 for secure asset management.",
+      title: t("security"),
+      description: t("security-desc"),
       icon: <ShieldIcon className="h-6 w-6" />,
     },
     {
-      title: "Cloud Access",
-      description:
-        "Access your asset management system from anywhere using our secure cloud-based platform.",
+      title: t("cloud"),
+      description: t("cloud-desc"),
       icon: <CloudIcon className="h-6 w-6" />,
     },
     {
-      title: "Scalable Solution",
-      description:
-        "Perfect for businesses of all sizes, from small startups to large enterprises with thousands of devices.",
+      title: t("scalable"),
+      description: t("scalable-desc"),
       icon: <LayersIcon className="h-6 w-6" />,
     },
     {
-      title: "Team Collaboration",
-      description:
-        "Share asset information with your team and assign responsibilities for efficient management.",
+      title: t("team"),
+      description: t("team-desc"),
       icon: <UsersIcon className="h-6 w-6" />,
     },
   ];
@@ -85,12 +80,10 @@ const Features: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Powerful Features,{" "}
-            <span className="text-primary">Simple Interface</span>
+            {t("title1")} <span className="text-primary">{t("title2")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Manage your IT assets with ease using our comprehensive set of
-            features designed for modern businesses.
+            {t("subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

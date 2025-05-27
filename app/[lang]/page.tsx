@@ -6,6 +6,7 @@ import Header from "./_components/Header";
 import Hero from "./_components/Hero";
 import HowItWorks from "./_components/HowItWorks";
 import Pricing from "./_components/Pricing";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <Pricing />
+        <Testimonials />
       </main>
     </div>
   );

@@ -1,0 +1,141 @@
+{
+  "Header": {
+    "features": "Fonctionnalités",
+    "how-it-works": "Comment ça fonctionne",
+    "pricing": "Tarification",
+    "testimonials": "Témoignages",
+    "sign-in": "Se connecter",
+    "get-started": "Commencer"
+  },
+  "Hero": {
+    "installation": "Aucune installation requise",
+    "title1": "Gestion",
+    "title2": "des actifs",
+    "title3": "informatiques sans effort",
+    "subtitle": "Découvrez et surveillez automatiquement tous les actifs de votre réseau sans installer de logiciel sur les appareils terminaux.",
+    "trial": "Commencer l'essai gratuit",
+    "demo": "Voir comment ça fonctionne",
+    "badge1": "Découverte instantanée du réseau",
+    "badge2": "Sécurité de niveau entreprise",
+    "badge3": "Plateforme basée sur le cloud",
+    "badge4": "Configuration en quelques minutes"
+  },
+  "Features": {
+    "title1": "Fonctionnalités puissantes,",
+    "title2": "Interface simple",
+    "subtitle": "Gérez facilement vos actifs informatiques grâce à notre ensemble complet de fonctionnalités conçues pour les entreprises modernes.",
+    "zero-installation": "Aucune installation",
+    "zero-installation-desc": "Pas besoin d’installer de logiciel sur chaque appareil. Analysez et surveillez l’ensemble de votre réseau sans toucher aux points de terminaison.",
+    "automatic-discovery": "Découverte automatique",
+    "automatic-discovery-desc": "Détectez automatiquement tous les appareils connectés à votre réseau, y compris les serveurs, les stations de travail et les appareils IoT.",
+    "monitor": "Surveillance en temps réel",
+    "monitor-desc": "Recevez des alertes instantanées lorsque de nouveaux appareils se connectent à votre réseau ou lorsque des actifs existants changent d’état.",
+    "dashboard": "Tableau de bord complet",
+    "dashboard-desc": "Visualisez l’ensemble de votre infrastructure informatique avec des tableaux de bord intuitifs et des informations détaillées sur les actifs.",
+    "security": "Sécurité d'entreprise",
+    "security-desc": "Assurez la conformité aux normes de l’industrie telles que le RGPD, HIPAA et ISO 27001 pour une gestion sécurisée des actifs.",
+    "cloud": "Accès cloud",
+    "cloud-desc": "Accédez à votre système de gestion des actifs depuis n’importe où grâce à notre plateforme sécurisée basée sur le cloud.",
+    "scalable": "Solution évolutive",
+    "scalable-desc": "Parfaite pour les entreprises de toutes tailles, des petites startups aux grandes entreprises avec des milliers d'appareils.",
+    "team": "Collaboration en équipe",
+    "team-desc": "Partagez les informations sur les actifs avec votre équipe et attribuez des responsabilités pour une gestion efficace."
+  },
+  "LogIn": {
+    "title": "Connectez-vous à votre compte",
+    "subtitle": "Ou",
+    "create": "créez un nouveau compte",
+    "email": "Adresse e-mail",
+    "email-placeholder": "Entrez votre e-mail",
+    "password": "Mot de passe",
+    "password-placeholder": "Entrez votre mot de passe",
+    "remember-me": "Se souvenir de moi",
+    "forgot-password": "Mot de passe oublié ?",
+    "sign-in": "Se connecter",
+    "continue-with": "Ou continuer avec"
+  },
+  "HowItWorks": {
+    "title1": "Connectez-vous à votre réseau",
+    "description1": "Notre système se connecte à votre réseau via un petit appareil sécurisé ou votre infrastructure existante. Aucune configuration complexe requise.",
+    "title2": "Découverte automatique",
+    "description2": "NetScan détecte automatiquement tous les appareils connectés à votre réseau, en identifiant leur type, leurs spécifications et les logiciels installés.",
+    "title3": "Surveillance en temps réel",
+    "description3": "Surveillez l’état de tous vos actifs informatiques en temps réel. Recevez des alertes en cas de nouveaux appareils, de changements d’état ou de problèmes de sécurité potentiels.",
+    "title4": "Résultats immédiats",
+    "description4": "Commencez à obtenir des informations sur votre infrastructure informatique quelques minutes après la configuration. Générez des rapports, suivez les changements et optimisez vos actifs.",
+    "titleStart": "Comment",
+    "titleEnd": "ça fonctionne",
+    "subtitle": "Commencez en quelques minutes avec notre processus simple en quatre étapes",
+    "action": "Voir en action",
+    "video": "Démonstration vidéo",
+    "videoDescription": "Regardez comment NetScan découvre et surveille toute votre infrastructure informatique en quelques minutes sans installer de logiciel sur les appareils individuels."
+  },
+  "Pricing": {
+    "title1": "Transparence",
+    "title2": "Tarification",
+    "subtitle": "Payez uniquement pour les actifs que nous détectons. Aucun frais caché, aucune structure tarifaire compliquée.",
+    "popular": "Populaire",
+    "count": "par actif/mois",
+    "sectionTitle": "Fonctionnalités incluses :",
+    "customTitle": "Besoin d’une solution personnalisée ?",
+    "customDescription": "Nous proposons des tarifs et des fonctionnalités personnalisés pour les organisations ayant des besoins spécifiques. Contactez notre équipe commerciale pour discuter de vos besoins.",
+    "sales": "Contacter les ventes",
+    "Type": {
+      "monthly": "Mensuel",
+      "annual": "Annuel (-20%)"
+    },
+    "Plans": {
+      "Starter": {
+        "name": "Starter",
+        "description": "Parfait pour les petites entreprises qui commencent la gestion des actifs.",
+        "feature1": "Jusqu’à 100 actifs",
+        "feature2": "Découverte basique des actifs",
+        "feature3": "Surveillance en temps réel",
+        "feature4": "Alertes par e-mail",
+        "feature5": "Accès au cloud",
+        "feature6": "Support 8 heures (jours ouvrables)",
+        "cta": "Commencer l’essai gratuit"
+      },
+      "Business": {
+        "name": "Business",
+        "description": "Idéal pour les entreprises en croissance avec une infrastructure IT en expansion.",
+        "feature1": "101 à 500 actifs",
+        "feature2": "Découverte avancée des actifs",
+        "feature3": "Surveillance en temps réel",
+        "feature4": "Alertes par e-mail et SMS",
+        "feature5": "Accès cloud avec API",
+        "feature6": "Support prioritaire 24/7",
+        "feature6Tooltip": "Support disponible 24h/24 et 7j/7, y compris les week-ends et jours fériés",
+        "feature7": "Rapports personnalisés",
+        "feature7Tooltip": "Créez et planifiez des rapports personnalisés selon vos besoins",
+        "cta": "Commencer l’essai gratuit"
+      },
+      "Enterprise": {
+        "name": "Enterprise",
+        "description": "Pour les grandes organisations avec des environnements IT complexes.",
+        "feature1": "500+ actifs",
+        "feature2": "Découverte de niveau entreprise",
+        "feature3": "Surveillance en temps réel",
+        "feature4": "Système d’alerte avancé",
+        "feature5": "Accès complet à l’API",
+        "feature6": "Support dédié 24/7",
+        "feature7": "Intégration personnalisée",
+        "cta": "Contacter les ventes"
+      }
+    }
+  },
+  "Testimonials": {
+    "titleStart": "Fiable par",
+    "titleEnd": "Les leaders de l'industrie",
+    "subtitle": "Rejoignez des centaines d'entreprises qui utilisent NetScan pour gérer leurs actifs informatiques sans effort",
+    "1": {
+      "quote": "NetScan a transformé notre processus de gestion des actifs informatiques. Nous passions des jours à auditer manuellement les appareils, mais maintenant tout est automatisé et en temps réel."
+    },
+    "2": {
+      "quote": "L'approche sans installation change la donne. Nous avons déployé NetScan sur l'ensemble de notre réseau sans toucher un seul appareil terminal."
+    },
+    "3": {
+      "quote": "En tant qu'institution financière, la sécurité est notre priorité absolue. NetScan nous offre une visibilité complète sans compromettre nos protocoles de sécurité stricts."
+    }
+  }
+}
