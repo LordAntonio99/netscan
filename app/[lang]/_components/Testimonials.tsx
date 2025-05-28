@@ -84,15 +84,6 @@ const Testimonials: React.FC = () => {
     },
   ];
 
-  //   const logos = [
-  //     { name: "Company 1", width: "w-32" },
-  //     { name: "Company 2", width: "w-24" },
-  //     { name: "Company 3", width: "w-28" },
-  //     { name: "Company 4", width: "w-32" },
-  //     { name: "Company 5", width: "w-36" },
-  //     { name: "Company 6", width: "w-28" },
-  //   ];
-
   return (
     <section id="testimonials" className="py-20 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
