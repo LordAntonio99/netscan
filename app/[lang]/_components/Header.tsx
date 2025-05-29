@@ -58,9 +58,11 @@ const Header = () => {
                 {t("sign-in")}
               </Button>
             </Link>
-            <Button variant="outline" size="sm">
-              {t("get-started")} <ArrowRightIcon className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href={"/auth/register"}>
+              <Button variant="outline" size="sm">
+                {t("get-started")} <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </nav>
           {/* Mobile Menu Button */}
           <div className="md:hidden">

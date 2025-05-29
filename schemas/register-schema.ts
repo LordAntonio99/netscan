@@ -1,6 +1,5 @@
+import { passwordRegex } from "@/lib/regex";
 import { z } from "zod";
-
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
 const registerSchema = z
   .object({

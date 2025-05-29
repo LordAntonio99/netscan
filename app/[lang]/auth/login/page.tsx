@@ -1,8 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { authClient } from "@/lib/auth-client";
+import loginSchema from "@/schemas/login-schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -12,18 +22,42 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const router = useRouter();
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      rememberMe: false,
+    },
+  });
 
   const t = useTranslations("LogIn");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle login logic here
-  };
+  async function onSubmit(values: z.infer<typeof loginSchema>) {
+    console.log(values);
+    try {
+      const { data, error } = await authClient.signIn.email({
+        email: values.email,
+        password: values.password,
+        rememberMe: values.rememberMe,
+      });
+
+      if (error) {
+        return toast.error(error.message);
+      }
+
+      toast.info(`Bienvenido ${data.user.name}`);
+      router.push("/dashboard");
+    } catch (err) {
+      console.error(err);
+    }
+  }
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -37,7 +71,7 @@ const LoginPage = () => {
         <p className="mt-2 text-center text-sm text-muted-foreground">
           {t("subtitle")}{" "}
           <Link
-            href="/register"
+            href="/auth/register"
             className="font-medium text-primary hover:text-primary/80"
           >
             {t("create")}
@@ -47,75 +81,86 @@ const LoginPage = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-secondary py-8 px-4 shadow-xl rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <Label htmlFor="email" className="text-sm font-medium">
-                {t("email")}
-              </Label>
-              <div className="mt-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <MailIcon className="h-5 w-5 text-muted-foreground" />
-                </div>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-2 border border-muted-foreground rounded-md placeholder-muted-foreground/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                  placeholder={t("email-placeholder")}
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email address</FormLabel>
+                    <FormControl>
+                      <div className="flex items-center border border-muted-foreground px-2 py-1 rounded-md focus-within:border-primary focus-within:text-primary transition-colors text-muted-foreground">
+                        <MailIcon className="mr-2 " />
+                        <Input
+                          placeholder="Enter your mail"
+                          className="flex-1 border-none focus:outline-none focus:ring-0 focus-visible:ring-transparent text-white"
+                          {...field}
+                        />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Password</FormLabel>
+                    <FormControl>
+                      <div className="flex items-center border border-muted-foreground px-2 py-1 rounded-md focus-within:border-primary focus-within:text-primary transition-colors text-muted-foreground">
+                        <LockIcon className="mr-2 " />
+                        <Input
+                          placeholder="Create a password"
+                          type="password"
+                          className="flex-1 border-none focus:outline-none focus:ring-0 focus-visible:ring-transparent text-white"
+                          {...field}
+                        />
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <div className="flex items-center justify-between">
+                <FormField
+                  control={form.control}
+                  name="rememberMe"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <div className="space-y-1 leading-none">
+                        <FormLabel>{t("remember-me")}</FormLabel>
+                      </div>
+                    </FormItem>
+                  )}
                 />
-              </div>
-            </div>
 
-            <div>
-              <Label htmlFor="password" className="text-sm font-medium">
-                {t("password")}
-              </Label>
-              <div className="mt-1 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <LockIcon className="h-5 w-5 text-muted-foreground" />
+                <div className="text-sm">
+                  <Link
+                    href="/forgot-password"
+                    className="font-medium text-primary hover:text-primary/80"
+                  >
+                    {t("forgot-password")}
+                  </Link>
                 </div>
-                <Input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-2 border border-muted-foreground rounded-md placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-                  placeholder={t("password-placeholder")}
-                />
               </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <Checkbox id="remember-me" name="remember-me" />
-                <Label htmlFor="remember-me" className="ml-2 block text-sm ">
-                  {t("remember-me")}
-                </Label>
-              </div>
-
-              <div className="text-sm">
-                <Link
-                  href="/forgot-password"
-                  className="font-medium text-primary hover:text-primary/80"
-                >
-                  {t("forgot-password")}
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <Button type="submit" variant="default" className="w-full">
-                {t("sign-in")} <ArrowRightIcon className="ml-2 h-4 w-4" />
+              <Button
+                type="submit"
+                variant="default"
+                className="w-full flex items-center justify-center"
+              >
+                {t("sign-in")} <ArrowRightIcon />
               </Button>
-            </div>
-          </form>
+            </form>
+          </Form>
 
           <div className="mt-6">
             <div className="relative">

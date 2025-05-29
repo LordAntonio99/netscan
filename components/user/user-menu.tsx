@@ -10,17 +10,20 @@ import {
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const UserMenu = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { data: session } = authClient.useSession();
+  const router = useRouter();
 
   const handleSignOut = async () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          redirect("/auth/login");
+          toast.info(`¡Hasta luego ${session?.user.name}!`);
+          router.push("/auth/login");
         },
       },
     });
