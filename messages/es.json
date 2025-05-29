@@ -58,7 +58,7 @@
     "title1": "Conéctate a tu red",
     "description1": "Nuestro sistema se conecta a tu red mediante un pequeño dispositivo seguro o a través de tu infraestructura existente. No se requiere una configuración compleja.",
     "title2": "Descubrimiento automático",
-    "description2": "NetScan detecta automáticamente todos los dispositivos conectados a tu red, identificando su tipo, especificaciones y software instalado.",
+    "description2": "Synovo detecta automáticamente todos los dispositivos conectados a tu red, identificando su tipo, especificaciones y software instalado.",
     "title3": "Monitoreo en tiempo real",
     "description3": "Supervisa el estado de todos tus activos de TI en tiempo real. Recibe alertas sobre nuevos dispositivos, cambios de estado o posibles problemas de seguridad.",
     "title4": "Resultados inmediatos",
@@ -68,7 +68,7 @@
     "subtitle": "Comienza en minutos con nuestro sencillo proceso de cuatro pasos",
     "action": "Verlo en acción",
     "video": "Demostración en video",
-    "videoDescription": "Mira cómo NetScan descubre y supervisa toda tu infraestructura de TI en minutos sin instalar ningún software en los dispositivos individuales."
+    "videoDescription": "Mira cómo Synovo descubre y supervisa toda tu infraestructura de TI en minutos sin instalar ningún software en los dispositivos individuales."
   },
   "Pricing": {
     "title1": "Transparente",
@@ -127,15 +127,15 @@
   "Testimonials": {
     "titleStart": "Confiado por",
     "titleEnd": "Líderes de la industria",
-    "subtitle": "Únete a cientos de empresas que usan NetScan para gestionar sus activos de TI sin esfuerzo",
+    "subtitle": "Únete a cientos de empresas que usan Synovo para gestionar sus activos de TI sin esfuerzo",
     "1": {
-      "quote": "NetScan transformó nuestro proceso de gestión de activos de TI. Antes tardábamos días auditando dispositivos manualmente, pero ahora todo está automatizado y en tiempo real."
+      "quote": "Synovo transformó nuestro proceso de gestión de activos de TI. Antes tardábamos días auditando dispositivos manualmente, pero ahora todo está automatizado y en tiempo real."
     },
     "2": {
-      "quote": "El enfoque sin instalación es revolucionario. Desplegamos NetScan en toda nuestra red sin tocar un solo dispositivo endpoint."
+      "quote": "El enfoque sin instalación es revolucionario. Desplegamos Synovo en toda nuestra red sin tocar un solo dispositivo endpoint."
     },
     "3": {
-      "quote": "Como institución financiera, la seguridad es nuestra máxima prioridad. NetScan nos brinda visibilidad completa sin comprometer nuestros estrictos protocolos de seguridad."
+      "quote": "Como institución financiera, la seguridad es nuestra máxima prioridad. Synovo nos brinda visibilidad completa sin comprometer nuestros estrictos protocolos de seguridad."
     }
   }
 }

@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const generateMetadata = () => {
   return {
-    title: `NetScan - IT Asset Management`,
+    title: `Synovo - IT Asset Management`,
     description: "IT Asset Management",
   };
 };

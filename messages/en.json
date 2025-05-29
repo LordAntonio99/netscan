@@ -58,7 +58,7 @@
     "title1": "Connect to Your Network",
     "description1": "Our system connects to your network using a small secure appliance or through your existing infrastructure. No complex setup required.",
     "title2": "Automatic Discovery",
-    "description2": "NetScan automatically discovers all devices connected to your network, identifying their type, specifications, and installed software.",
+    "description2": "Synovo automatically discovers all devices connected to your network, identifying their type, specifications, and installed software.",
     "title3": "Real-time Monitoring",
     "description3": "Monitor the status of all your IT assets in real-time. Get alerts for new devices, status changes, or potential security issues.",
     "title4": "Immediate Results",
@@ -68,7 +68,7 @@
     "subtitle": "Get started in minutes with our simple four-step process",
     "action": "See it in action",
     "video": "Video demonstration",
-    "videoDescription": "Watch how NetScan discovers and monitors your entire IT infrastructure in minutes without installing any software on individual devices."
+    "videoDescription": "Watch how Synovo discovers and monitors your entire IT infrastructure in minutes without installing any software on individual devices."
   },
   "Pricing": {
     "title1": "Transparent",
@@ -127,15 +127,15 @@
   "Testimonials": {
     "titleStart": "Trusted by",
     "titleEnd": "Industry Leaders",
-    "subtitle": "Join hundreds of businesses that use NetScan to manage their IT assets effortlessly",
+    "subtitle": "Join hundreds of businesses that use Synovo to manage their IT assets effortlessly",
     "1": {
-      "quote": "NetScan transformed our IT asset management process. We used to spend days manually auditing devices, but now it's all automated and in real-time."
+      "quote": "Synovo transformed our IT asset management process. We used to spend days manually auditing devices, but now it's all automated and in real-time."
     },
     "2": {
-      "quote": "The zero-installation approach is a game-changer. We deployed NetScan across our entire network without touching a single endpoint device."
+      "quote": "The zero-installation approach is a game-changer. We deployed Synovo across our entire network without touching a single endpoint device."
     },
     "3": {
-      "quote": "As a financial institution, security is our top priority. NetScan gives us complete visibility without compromising our strict security protocols."
+      "quote": "As a financial institution, security is our top priority. Synovo gives us complete visibility without compromising our strict security protocols."
     }
   }
 }

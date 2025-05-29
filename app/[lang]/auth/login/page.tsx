@@ -16,6 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AppleIcon,
   ArrowRightIcon,
+  Loader2,
   LockIcon,
   MailIcon,
   MonitorIcon,
@@ -156,8 +157,20 @@ const LoginPage = () => {
                 type="submit"
                 variant="default"
                 className="w-full flex items-center justify-center"
+                disabled={
+                  !form.formState.isValid ||
+                  form.formState.isSubmitting ||
+                  form.formState.isSubmitted
+                }
               >
-                {t("sign-in")} <ArrowRightIcon />
+                {form.formState.isSubmitting && (
+                  <Loader2 className="animate-spin" />
+                )}
+                {!form.formState.isSubmitting && (
+                  <>
+                    {t("sign-in")} <ArrowRightIcon />
+                  </>
+                )}
               </Button>
             </form>
           </Form>

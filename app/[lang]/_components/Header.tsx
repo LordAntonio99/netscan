@@ -44,7 +44,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <MonitorIcon className="size-8 text-primary mr-2" />
-            <span className="font-bold text-xl text-white">NetScan</span>
+            <span className="font-bold text-xl text-white">Synovo</span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

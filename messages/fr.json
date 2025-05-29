@@ -58,7 +58,7 @@
     "title1": "Connectez-vous à votre réseau",
     "description1": "Notre système se connecte à votre réseau via un petit appareil sécurisé ou votre infrastructure existante. Aucune configuration complexe requise.",
     "title2": "Découverte automatique",
-    "description2": "NetScan détecte automatiquement tous les appareils connectés à votre réseau, en identifiant leur type, leurs spécifications et les logiciels installés.",
+    "description2": "Synovo détecte automatiquement tous les appareils connectés à votre réseau, en identifiant leur type, leurs spécifications et les logiciels installés.",
     "title3": "Surveillance en temps réel",
     "description3": "Surveillez l’état de tous vos actifs informatiques en temps réel. Recevez des alertes en cas de nouveaux appareils, de changements d’état ou de problèmes de sécurité potentiels.",
     "title4": "Résultats immédiats",
@@ -68,7 +68,7 @@
     "subtitle": "Commencez en quelques minutes avec notre processus simple en quatre étapes",
     "action": "Voir en action",
     "video": "Démonstration vidéo",
-    "videoDescription": "Regardez comment NetScan découvre et surveille toute votre infrastructure informatique en quelques minutes sans installer de logiciel sur les appareils individuels."
+    "videoDescription": "Regardez comment Synovo découvre et surveille toute votre infrastructure informatique en quelques minutes sans installer de logiciel sur les appareils individuels."
   },
   "Pricing": {
     "title1": "Transparence",
@@ -127,15 +127,15 @@
   "Testimonials": {
     "titleStart": "Fiable par",
     "titleEnd": "Les leaders de l'industrie",
-    "subtitle": "Rejoignez des centaines d'entreprises qui utilisent NetScan pour gérer leurs actifs informatiques sans effort",
+    "subtitle": "Rejoignez des centaines d'entreprises qui utilisent Synovo pour gérer leurs actifs informatiques sans effort",
     "1": {
-      "quote": "NetScan a transformé notre processus de gestion des actifs informatiques. Nous passions des jours à auditer manuellement les appareils, mais maintenant tout est automatisé et en temps réel."
+      "quote": "Synovo a transformé notre processus de gestion des actifs informatiques. Nous passions des jours à auditer manuellement les appareils, mais maintenant tout est automatisé et en temps réel."
     },
     "2": {
-      "quote": "L'approche sans installation change la donne. Nous avons déployé NetScan sur l'ensemble de notre réseau sans toucher un seul appareil terminal."
+      "quote": "L'approche sans installation change la donne. Nous avons déployé Synovo sur l'ensemble de notre réseau sans toucher un seul appareil terminal."
     },
     "3": {
-      "quote": "En tant qu'institution financière, la sécurité est notre priorité absolue. NetScan nous offre une visibilité complète sans compromettre nos protocoles de sécurité stricts."
+      "quote": "En tant qu'institution financière, la sécurité est notre priorité absolue. Synovo nous offre une visibilité complète sans compromettre nos protocoles de sécurité stricts."
     }
   }
 }

@@ -10,7 +10,7 @@ import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "NetScan - Automated IT Asset Management";
+    document.title = "Synovo - Automated IT Asset Management";
 
     const handleSmoothScroll = (e: Event) => {
       e.preventDefault();

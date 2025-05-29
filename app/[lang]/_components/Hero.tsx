@@ -79,7 +79,7 @@ const Hero = () => {
                     <div className="h-3 w-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    NetScan Dashboard
+                    Synovo Dashboard
                   </div>
                 </div>
 
