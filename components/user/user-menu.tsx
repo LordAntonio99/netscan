@@ -74,13 +74,15 @@ const UserMenu = () => {
         </div>
       </PopoverTrigger>
       <PopoverContent
-        side="top"
-        className="border-none flex flex-col bg-secondary shadow ml-2 p-0"
+        side="right"
+        className={cn(
+          "border-none flex flex-col bg-secondary shadow ml-2 w-72 p-0 transition-all"
+        )}
       >
         <Button
           variant={"destructive"}
           onClick={handleSignOut}
-          className="w-full"
+          className="w-full flex justify-start"
         >
           Sign Out
         </Button>
