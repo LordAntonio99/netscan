@@ -88,6 +88,8 @@ model Organization {
   metadata    String?
   members     Member[]
   invitations Invitation[]
+  disclaimers Disclaimer[]
+  assets      Asset[]
 
   @@unique([slug])
   @@map("organization")
@@ -117,4 +119,38 @@ model Invitation {
   user           User         @relation(fields: [inviterId], references: [id], onDelete: Cascade)
 
   @@map("invitation")
+}
+
+model Disclaimer {
+  id                String       @id @default(uuid())
+  disclaimerTitle   String       @db.VarChar(100)
+  disclaimerMessage String       @db.VarChar(1000)
+  organizationId    String
+  organization      Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model Asset {
+  id              String    @id @default(uuid())
+  assetName       String
+  manufacturer    String? // optional
+  model           String? // optional
+  assetType       String
+  serialNumber    String? // optional
+  state           String
+  warrantyEndDate DateTime? // optional
+  ipAddress       String? // optional
+  systemSKU       String? // optional
+  macAddress      String? // optional
+  description     String? // optional
+  domain          String? // optional
+  dnsName         String? // optional
+  fqdn            String? // optional
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  organizationId String
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+
+  @@unique([assetName, organizationId])
 }

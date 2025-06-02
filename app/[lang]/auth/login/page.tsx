@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
-import loginSchema from "@/schemas/login-schema";
+import loginSchema from "@/schemas/zod/login-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AppleIcon,

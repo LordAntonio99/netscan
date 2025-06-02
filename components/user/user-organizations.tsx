@@ -55,7 +55,7 @@ const UserOrganizations = () => {
             variant={"ghost"}
             disabled={isPending}
           >
-            <p>Organization name</p>
+            <p>No organization selected</p>
             <ChevronLeft
               className={cn(open ? "rotate-180" : "rotate-0", "transition-all")}
             />

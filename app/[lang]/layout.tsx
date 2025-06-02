@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import ToasterProvider from "@/components/providers/toaster-provider";
+import ReactQueryProvider from "@/components/providers/react-query-provider";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -36,7 +37,9 @@ export default async function RootLayout({
             defaultTheme="dark"
             disableTransitionOnChange
           >
+            <ReactQueryProvider>
             {children}
+            </ReactQueryProvider>
             <ToasterProvider />
           </ThemeProvider>
         </NextIntlClientProvider>

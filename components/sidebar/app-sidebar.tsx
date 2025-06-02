@@ -23,8 +23,11 @@ import Link from "next/link";
 import SidebarButton from "./sidebar-button";
 import UserOrganizations from "../user/user-organizations";
 import { Separator } from "../ui/separator";
+import { authClient } from "@/lib/auth-client";
 
 const AppSidebar = () => {
+  const {data} = authClient.useActiveOrganization()
+
   return (
     <Sidebar className="bg-secondary">
       <SidebarHeader className="p-4 bg-secondary">
@@ -39,6 +42,16 @@ const AppSidebar = () => {
       <Separator className="bg-background" />
 
       <SidebarContent className="bg-secondary">
+        {
+          !data?.id ? (
+    <div>
+      <SidebarMenu className="p-4">
+          <UserOrganizations />
+        </SidebarMenu>
+      <p className="px-4">Select an organization to start</p>
+    </div>
+      ) : (
+        <>
         <SidebarMenu className="p-4">
           <UserOrganizations />
         </SidebarMenu>
@@ -49,28 +62,32 @@ const AppSidebar = () => {
             title="Inventory"
             href="/dashboard/inventory"
             icon={BoxIcon}
-          />
+            />
           <SidebarButton
             title="Software"
             href="/dashboard/software"
             icon={Package2Icon}
-          />
+            />
           <SidebarButton
             title="Users"
             href="/dashboard/users"
             icon={Users2Icon}
-          />
+            />
           <SidebarButton
             title="Diagrams"
             href="/dashboard/diagrams"
             icon={ChartPieIcon}
-          />
+            />
           <SidebarButton
             title="Configuration"
             href="/dashboard/configuration"
             icon={CogIcon}
-          />
+            />
         </SidebarMenu>
+            </>
+      )
+        }
+        
       </SidebarContent>
       <Separator className="bg-background" />
       <SidebarFooter className="bg-secondary">

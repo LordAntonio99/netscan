@@ -1,6 +1,7 @@
 "use client";
 
 import OrganizationConfiguration from "@/components/dashboard/configuration/OrganizationConfiguration";
+import ScannerConfiguration from "@/components/dashboard/configuration/ScannerConfiguration";
 import { Button } from "@/components/ui/button";
 import { BriefcaseBusinessIcon, ScanEyeIcon } from "lucide-react";
 import Link from "next/link";
@@ -18,7 +19,7 @@ const Menus = [
     icon: ScanEyeIcon,
     name: "Agents",
     key: "agents",
-    component: <></>,
+    component: <ScannerConfiguration />,
   },
 ];
 
@@ -46,7 +47,7 @@ const ConfigurationPage = () => {
           );
         })}
       </aside>
-      <div className="w-full h-full rounded-md bg-secondary px-4">
+      <div className="w-full h-full rounded-md border-secondary border px-4">
         {Menus.find((menu) => menu.key === active)?.component}
       </div>
     </div>
