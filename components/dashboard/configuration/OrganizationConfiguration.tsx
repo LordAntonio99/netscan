@@ -30,8 +30,8 @@ const OrganizationConfiguration = () => {
       logo: data?.logo || "",
       name: data?.name || "",
       slug: data?.slug || "",
-      disclaimerTitle: data?.disclaimerTitle || "",
-      disclaimerMessage: data?.disclaimerMessage || "",
+      disclaimerTitle: "",
+      disclaimerMessage: "",
     },
   });
 
