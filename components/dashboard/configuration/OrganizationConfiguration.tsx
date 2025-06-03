@@ -60,8 +60,6 @@ const OrganizationConfiguration = () => {
     form.setValue("logo", data?.logo || "");
     form.setValue("name", data?.name || "");
     form.setValue("slug", data?.slug || "");
-    form.setValue("disclaimerTitle", data?.disclaimerTitle || "");
-    form.setValue("disclaimerMessage", data?.disclaimerMessage || "");
   }, [data]);
 
   const logo = form.watch("logo");
