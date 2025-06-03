@@ -12,12 +12,12 @@ const AssetTypeDisplay = ({ assetKey }: AssetTypeDisplayProps) => {
   const icon = asset?.iconSrc;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center select-none">
       {icon && (
         <Image
           src={icon}
           alt={`${label} icon`}
-          className="size-8 mr-2 p-1"
+          className="size-8 mr-2 p-1 select-none"
         />
       )}
       <span>{label}</span>

@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import Features from "./_components/Features";
-import Header from "./_components/Header";
-import Hero from "./_components/Hero";
-import HowItWorks from "./_components/HowItWorks";
-import Pricing from "./_components/Pricing";
-import Testimonials from "./_components/Testimonials";
+import Features from "./[slug]/_components/Features";
+import Header from "./[slug]/_components/Header";
+import Hero from "./[slug]/_components/Hero";
+import HowItWorks from "./[slug]/_components/HowItWorks";
+import Pricing from "./[slug]/_components/Pricing";
+import Testimonials from "./[slug]/_components/Testimonials";
 
 export default function Home() {
   useEffect(() => {

@@ -1,3 +1,4 @@
+import AssetStateDisplay from "@/components/asset-status-display";
 import AssetTypeDisplay from "@/components/asset-type-display";
 import { Asset } from "@/generated/prisma";
 import { ColumnDef } from "@tanstack/react-table";
@@ -43,6 +44,11 @@ export const AssetListColumns: ColumnDef<Asset>[] = [
   {
     accessorKey: "state",
     header: "STATE",
+    cell: ({row}) => {
+      const state = row.original.state
+
+      return <AssetStateDisplay statusKey={state} />
+    }
   },
   {
   accessorKey: "createdAt",

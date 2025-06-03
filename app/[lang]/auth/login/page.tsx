@@ -44,17 +44,36 @@ const LoginPage = () => {
     console.log(values);
     try {
       const { data, error } = await authClient.signIn.email({
-        email: values.email,
-        password: values.password,
-        rememberMe: values.rememberMe,
-      });
+  email: values.email,
+  password: values.password,
+  rememberMe: values.rememberMe,
+});
 
-      if (error) {
-        return toast.error(error.message);
-      }
+if (error) {
+  return toast.error(error.message);
+}
 
-      toast.info(`Bienvenido ${data.user.name}`);
-      router.push("/dashboard");
+toast.info(`Bienvenido ${data.user.name}`);
+
+// Obtener organizaciones
+const { data: orgs, } = await authClient.organization.list();
+
+if (!orgs || orgs.length === 0) {
+  return router.push("/organizations/create");
+}
+
+// Establecer organización activa
+const activeOrg = await authClient.organization.setActive({
+  organizationId: orgs[0].id,
+});
+
+if (!activeOrg.data?.slug) {
+  return toast.error("No se pudo obtener el slug de la organización activa.");
+}
+
+// Redirigir al dashboard
+router.push(`/${activeOrg.data.slug}/dashboard`);
+
     } catch (err) {
       console.error(err);
     }

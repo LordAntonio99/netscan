@@ -105,11 +105,14 @@ export async function createAsset(
   }
 }
 
-export async function getAllAssets(): Promise<ServerResponse<Asset[]>> {
+export async function getAllAssets(
+  slug: string
+): Promise<ServerResponse<Asset[]>> {
   try {
-    const requestHeaders = await headers();
-    const organization = await auth.api.getFullOrganization({
-      headers: requestHeaders,
+    const organization = await prisma.organization.findUnique({
+      where: {
+        slug,
+      },
     });
 
     if (!organization?.id) {

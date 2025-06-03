@@ -35,7 +35,7 @@ const UserOrganizations = () => {
       }
       toast.success(`Switched to ${data.name}`);
       setOpen(false);
-      router.push("/dashboard");
+      router.push(`/${data.slug}/dashboard`);
     } catch (err) {
       console.error(err);
     }

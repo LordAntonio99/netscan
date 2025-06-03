@@ -2,18 +2,19 @@
 import { DataTable } from "@/components/data-table";
 import Loading from "@/components/loading";
 import PageHeader from "@/components/page-header";
-import { authClient } from "@/lib/auth-client";
 import { AssetListColumns } from "@/schemas/tables/AssetListColumns";
 import { getAllAssets } from "@/server/assets";
 import { useQuery } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 import React from "react";
 
 const InventoryPage = () => {
-  const org = authClient.useActiveOrganization()
+  const { slug } = useParams()
   const {data, isLoading} = useQuery({
-    queryKey: ["assets", org.data?.id],
+    queryKey: ["assets", slug],
     queryFn: async () => {
-      return await getAllAssets()
+      if (!slug) return null
+      return await getAllAssets(slug as string)
     }
   })
 

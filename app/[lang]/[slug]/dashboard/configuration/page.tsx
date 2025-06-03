@@ -5,7 +5,7 @@ import ScannerConfiguration from "@/components/dashboard/configuration/ScannerCo
 import { Button } from "@/components/ui/button";
 import { BriefcaseBusinessIcon, ScanEyeIcon } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import React from "react";
 
 const Menus = [
@@ -25,6 +25,7 @@ const Menus = [
 
 const ConfigurationPage = () => {
   const searchParams = useSearchParams();
+  const { slug } = useParams()
   const active = searchParams.get("active") || "organization";
 
   return (
@@ -34,9 +35,10 @@ const ConfigurationPage = () => {
           const Icon = menu.icon;
           return (
             <Link
-              href={"/dashboard/configuration?active=" + menu.key}
-              key={menu.key}
-            >
+  href={`/${slug}/dashboard/configuration?active=${menu.key}`}
+  key={menu.key}
+>
+
               <Button
                 className="w-12 h-12"
                 variant={menu.key == active ? "default" : "ghost"}

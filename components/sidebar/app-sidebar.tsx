@@ -23,10 +23,10 @@ import Link from "next/link";
 import SidebarButton from "./sidebar-button";
 import UserOrganizations from "../user/user-organizations";
 import { Separator } from "../ui/separator";
-import { authClient } from "@/lib/auth-client";
+import { useParams } from "next/navigation";
 
 const AppSidebar = () => {
-  const {data} = authClient.useActiveOrganization()
+  const {slug} = useParams()
 
   return (
     <Sidebar className="bg-secondary">
@@ -43,7 +43,7 @@ const AppSidebar = () => {
 
       <SidebarContent className="bg-secondary">
         {
-          !data?.id ? (
+          !slug ? (
     <div>
       <SidebarMenu className="p-4">
           <UserOrganizations />
@@ -57,32 +57,12 @@ const AppSidebar = () => {
         </SidebarMenu>
         <Separator className="bg-background" />
         <SidebarMenu className="p-4">
-          <SidebarButton title="Dashboard" href="/dashboard" icon={HomeIcon} />
-          <SidebarButton
-            title="Inventory"
-            href="/dashboard/inventory"
-            icon={BoxIcon}
-            />
-          <SidebarButton
-            title="Software"
-            href="/dashboard/software"
-            icon={Package2Icon}
-            />
-          <SidebarButton
-            title="Users"
-            href="/dashboard/users"
-            icon={Users2Icon}
-            />
-          <SidebarButton
-            title="Diagrams"
-            href="/dashboard/diagrams"
-            icon={ChartPieIcon}
-            />
-          <SidebarButton
-            title="Configuration"
-            href="/dashboard/configuration"
-            icon={CogIcon}
-            />
+         <SidebarButton title="Dashboard" href={`/${slug}/dashboard`} icon={HomeIcon} />
+<SidebarButton title="Inventory" href={`/${slug}/dashboard/inventory`} icon={BoxIcon} />
+<SidebarButton title="Software" href={`/${slug}/dashboard/software`} icon={Package2Icon} />
+<SidebarButton title="Users" href={`/${slug}/dashboard/users`} icon={Users2Icon} />
+<SidebarButton title="Diagrams" href={`/${slug}/dashboard/diagrams`} icon={ChartPieIcon} />
+<SidebarButton title="Configuration" href={`/${slug}/dashboard/configuration`} icon={CogIcon} />
         </SidebarMenu>
             </>
       )
