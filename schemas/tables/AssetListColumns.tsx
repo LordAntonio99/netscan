@@ -1,12 +1,24 @@
 import AssetStateDisplay from "@/components/asset-status-display";
 import AssetTypeDisplay from "@/components/asset-type-display";
+import { Button } from "@/components/ui/button";
 import { Asset } from "@/generated/prisma";
 import { ColumnDef } from "@tanstack/react-table";
+import Link from "next/link";
 
-export const AssetListColumns: ColumnDef<Asset>[] = [
+
+export const getAssetListColumns = (slug: string): ColumnDef<Asset>[] => [
   {
     accessorKey: "assetName",
     header: "NAME",
+    cell: ({ row }) => {
+      return (
+        <Link href={`/${slug}/dashboard/inventory/${row.original.id}`}>
+        <Button size={"sm"} variant={"ghost"}>
+          {row.original.assetName}
+        </Button>
+        </Link>
+      )
+    }
   },
   {
     accessorKey: "assetType",
@@ -64,5 +76,4 @@ export const AssetListColumns: ColumnDef<Asset>[] = [
     return <span>{formattedDate}</span>;
   }
 }
-
-];
+]

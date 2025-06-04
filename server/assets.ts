@@ -153,3 +153,44 @@ export async function getAllAssets(
     };
   }
 }
+
+export async function getAssetById(id: string): Promise<ServerResponse<Asset>> {
+  try {
+    const asset = await prisma.asset.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!asset) {
+      return {
+        error: {
+          message:
+            "No se ha encontrado información de un asset con el id introducido",
+          status: "error",
+          statusCode: 400,
+        },
+        success: null,
+      };
+    }
+
+    return {
+      error: null,
+      success: {
+        content: asset,
+        total: 1,
+      },
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      error: {
+        message: "Error al recuperar la información del asset",
+        status: "error",
+        statusCode: 500,
+        details: err,
+      },
+      success: null,
+    };
+  }
+}

@@ -2,7 +2,7 @@
 import { DataTable } from "@/components/data-table";
 import Loading from "@/components/loading";
 import PageHeader from "@/components/page-header";
-import { AssetListColumns } from "@/schemas/tables/AssetListColumns";
+import { getAssetListColumns } from "@/schemas/tables/AssetListColumns";
 import { getAllAssets } from "@/server/assets";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
@@ -18,11 +18,12 @@ const InventoryPage = () => {
     }
   })
 
+  const colums = getAssetListColumns(slug as string)
   
   return (<div>
     <PageHeader title="Inventory" description="The Inventory is your centralized hub for all discovered and manually added assets in your environment." />
     {
-      isLoading  ? <Loading /> :  <DataTable columns={AssetListColumns} data={data?.success?.content ||[]} />
+      isLoading  ? <Loading /> :  <DataTable columns={colums} data={data?.success?.content ||[]} />
     }
   </div>)
 };
